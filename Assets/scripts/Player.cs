@@ -2,21 +2,16 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
-
-	
-	public Player instance;
 	private int health = 3;
     public float speed = 0;
 	public float walkSpeed = 8;
 	public float runSpeed = 12;
 
-
 	private Vector3 moveDirection;
 
 	// Use this for initialization
 	void Start () {
-		instance = this;
-		
+
 	}
 	
 	// Update is called once per frame
