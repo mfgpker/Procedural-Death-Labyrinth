@@ -1,0 +1,238 @@
+fileFormatVersion: 2
+guid: 3e241faf787499449b43d7b05a4f8e55
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: chickenx4_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 44
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 44
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 40
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_3
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 96
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_4
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 96
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_5
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 96
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_6
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 96
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_7
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 48
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_8
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 48
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_9
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 48
+        width: 28
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_10
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 48
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_11
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 48
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_12
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 48
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_13
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 48
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_14
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_15
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_16
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 28
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_17
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 0
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_18
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_19
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 0
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: chickenx4_20
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 0
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 
