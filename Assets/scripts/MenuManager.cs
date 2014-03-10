@@ -12,7 +12,7 @@ public class MenuManager : MonoBehaviour {
     private string slectedResolutions;
     private bool iswindowed;
     private bool editing = false;
-
+    private string version = "0.1.0";
 	// Use this for initialization
 	void Start () {
 		instance = this;
@@ -72,6 +72,8 @@ public class MenuManager : MonoBehaviour {
         if (GUI.Button(new Rect(Screen.width / 2 - 125, Screen.height / 2 + 240 - Offset, 250, 70), "Exit", skin)) {
 			Application.Quit();
 		}
+
+        GUI.Label(new Rect(Screen.width - 190, Screen.height - 40, 250, 50), "version " + version);
 	}
 
 	private void Play(){

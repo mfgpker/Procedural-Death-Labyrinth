@@ -23,11 +23,22 @@ public class Player : MonoBehaviour {
         else{
             speed = walkSpeed;
         }
-
+        
         Vector3 newPosition = transform.position;
         newPosition.x += Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         newPosition.y += Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        newPosition.z = -2.16366f;
         transform.position = newPosition;
+    }
+
+    void OnCollisionEnter(Collision theCollision){
+        Debug.Log("Hit something");
+     if(theCollision.gameObject.tag == "wall"){
+         Debug.Log("Hit the wall");
+     }
+     else if (theCollision.gameObject.tag == "door") {
+         Debug.Log("Hit the door");
+     }
     }
 
 }
