@@ -6,39 +6,60 @@ public class Player : MonoBehaviour {
     public float speed = 0;
 	public float walkSpeed = 8;
 	public float runSpeed = 12;
-
+    bool move = true;
 	private Vector3 moveDirection;
+    private BoxCollider collider;
+   static public  Room currentRoom;
 
-	// Use this for initialization
 	void Start () {
+        collider = GetComponent<BoxCollider>();
 
+        
+        GameObject.FindWithTag("MainCamera").camera.transform.position = new Vector3(3.092722f, -0.6933255f, -13.43808f);
 	}
-	
-	// Update is called once per frame
-    void Update(){
-        if (Input.GetKey(KeyCode.LeftShift)){
+    public float damp = 0.9f; // adjust the damp factor if necessary
+
+
+    void FixedUpdate() {
+        rigidbody.velocity = Vector3.zero;
+        rigidbody.angularVelocity = Vector3.zero;
+        if (Input.GetKey(KeyCode.LeftShift)) {
             speed = runSpeed;
             Debug.Log("speed; " + speed);
         }
-        else{
+        else {
             speed = walkSpeed;
         }
-        
-        Vector3 newPosition = transform.position;
+        Vector3 p = transform.position;
+        Vector3 newPosition = transform.position;       
         newPosition.x += Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         newPosition.y += Input.GetAxis("Vertical") * speed * Time.deltaTime;
-        newPosition.z = -2.16366f;
+        newPosition.z = p.z;
+
         transform.position = newPosition;
+         
     }
 
+
     void OnCollisionEnter(Collision theCollision){
-        Debug.Log("Hit something");
-     if(theCollision.gameObject.tag == "wall"){
-         Debug.Log("Hit the wall");
-     }
-     else if (theCollision.gameObject.tag == "door") {
-         Debug.Log("Hit the door");
-     }
+         Vector3 p = transform.position;
+         if(theCollision.gameObject.tag == "walln"){
+             Debug.Log("Hit the walln");
+             //transform.position = new Vector3(p.x, p.y, p.z);
+         }
+         else if (theCollision.gameObject.name == "DoorN") {
+             Debug.Log("Hit the DoorN");
+         }
+         else if (theCollision.gameObject.name == "DoorS") {
+             Debug.Log("Hit the DoorS");
+         }
+         else if (theCollision.gameObject.name == "DoorE") {
+             Debug.Log("Hit the DoorE");
+         }
+         else if (theCollision.gameObject.name == "DoorW") {
+             Debug.Log("Hit the DoorW");
+         }
     }
+    
 
 }

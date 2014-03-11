@@ -5,6 +5,7 @@ public class InGameMenu : MonoBehaviour {
 
     public GUISkin skin;
     public bool isMenu = false;
+   
 	// Use this for initialization
 	void Start () {
 	
@@ -15,8 +16,12 @@ public class InGameMenu : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             isMenu = !isMenu;
         }
+
         if (isMenu) {
-            //make game pause
+           Time.timeScale = 0;
+        }
+        else {
+            Time.timeScale = 1;
         }
 	}
 

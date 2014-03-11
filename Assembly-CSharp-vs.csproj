@@ -46,9 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\scripts\GameManager.cs" />
      <Compile Include="Assets\scripts\InGameMenu.cs" />
      <Compile Include="Assets\scripts\MenuManager.cs" />
      <Compile Include="Assets\scripts\Player.cs" />
+     <Compile Include="Assets\scripts\Room.cs" />
+     <Compile Include="Assets\scripts\SpawnPlayer.cs" />
+     <Compile Include="Assets\scripts\checkplayer.cs" />
+     <Compile Include="Assets\scripts\locked.cs" />
      <None Include="Assets\textures\UI\icons\license.txt" />
      <None Include="Assets\textures\UI\UIpack\Spritesheet\greenSheet.xml" />
      <None Include="Assets\textures\UI\buttons\Readme.txt" />
