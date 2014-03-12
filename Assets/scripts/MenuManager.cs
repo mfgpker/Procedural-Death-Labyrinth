@@ -12,7 +12,7 @@ public class MenuManager : MonoBehaviour {
     private string slectedResolutions;
     private bool iswindowed;
     private bool editing = false;
-    private string version = "0.1.4";
+    private string version = "0.1.6";
 	// Use this for initialization
 	void Start () {
 		instance = this;
@@ -52,13 +52,14 @@ public class MenuManager : MonoBehaviour {
 			Options();
 		if(CurMenu == "Credit")
 			Credit();
-
+        GUI.Label(new Rect(Screen.width - 190, Screen.height - 40, 250, 50), "version " + version);
 
 	}
 
 	public int Offset = 69;
 
 	private void Main(){
+        //GUI.Label(new Rect(Screen.width - 190, Screen.height - 40, 250, 50), "version " + version);
 		if(GUI.Button(new Rect(Screen.width/2 - 125, Screen.height/2 - 120 - Offset, 250, 70), "Play", skin)){
 			//Application.loadedLevelName("level1");
 			ToMenu("Play");
@@ -73,7 +74,7 @@ public class MenuManager : MonoBehaviour {
 			Application.Quit();
 		}
 
-        GUI.Label(new Rect(Screen.width - 190, Screen.height - 40, 250, 50), "version " + version);
+
 	}
 
 	private void Play(){
@@ -88,7 +89,8 @@ public class MenuManager : MonoBehaviour {
 	private void Options(){
 		
 		Box = new Rect(225, 110, 175, 50);
-		GUI.Label(new Rect(50, 120, 180, 50), "Resolutions:");
+		/*
+        GUI.Label(new Rect(50, 120, 180, 50), "Resolutions:");
 		if (GUI.Button(Box, slectedResolutions)){
             editing = true;
         }
@@ -102,6 +104,7 @@ public class MenuManager : MonoBehaviour {
                 }
             }
         }
+        */
         GUI.Label(new Rect(50, 300, 180, 50), "Window:");
         iswindowed = GUI.Toggle(new Rect(150, 290, 50, 50), iswindowed, "");
 

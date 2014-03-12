@@ -6,13 +6,13 @@ public class Player : MonoBehaviour {
     public float speed = 0;
 	public float walkSpeed = 8;
 	public float runSpeed = 12;
-    bool move = true;
+    
 	private Vector3 moveDirection;
-    private BoxCollider collider;
+    //private BoxCollider collider;
    static public  Room currentRoom;
 
 	void Start () {
-        collider = GetComponent<BoxCollider>();
+        //collider = GetComponent<BoxCollider>();
 
         
         GameObject.FindWithTag("MainCamera").camera.transform.position = new Vector3(3.092722f, -0.6933255f, -13.43808f);
@@ -42,22 +42,26 @@ public class Player : MonoBehaviour {
 
 
     void OnCollisionEnter(Collision theCollision){
-         Vector3 p = transform.position;
+         
          if(theCollision.gameObject.tag == "walln"){
              Debug.Log("Hit the walln");
              //transform.position = new Vector3(p.x, p.y, p.z);
          }
          else if (theCollision.gameObject.name == "DoorN") {
              Debug.Log("Hit the DoorN");
+             GameManager.init.changeRoom("north");
          }
          else if (theCollision.gameObject.name == "DoorS") {
              Debug.Log("Hit the DoorS");
+             GameManager.init.changeRoom("south");
          }
          else if (theCollision.gameObject.name == "DoorE") {
              Debug.Log("Hit the DoorE");
+             GameManager.init.changeRoom("east");
          }
          else if (theCollision.gameObject.name == "DoorW") {
              Debug.Log("Hit the DoorW");
+             GameManager.init.changeRoom("west");
          }
     }
     

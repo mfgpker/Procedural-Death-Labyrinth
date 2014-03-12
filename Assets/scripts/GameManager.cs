@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour {
         init = this;
         int id = 0;
         allRooms = new GameObject[numberOfRoomX * numberOfRoomY];
+        bool bossroom = false;
+
 
         for (int i = 0; i < numberOfRoomX; i++) {
             for (int j = 0; j < numberOfRoomY; j++) {
@@ -35,6 +37,7 @@ public class GameManager : MonoBehaviour {
                     newstarterroomObject.transform.parent = transform;
                     starter = true;
                     newstarterroomObject.transform.name = "Room:" + id;
+                    newstarterroomObject.SendMessage("SetRoom", true);
                 }
                 else {
                     GameObject RoomObject = Instantiate(Rooms[0], spawnPosition, transform.rotation) as GameObject;
@@ -48,28 +51,173 @@ public class GameManager : MonoBehaviour {
                 id++;
             }
         }
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+       
 	}
 
-
-    public void changeRoom(int toid, int fromid, string from){
-        GameObject from = GameObject.Find("Room:"+fromid);
-        Room rfrom = (Room)from.GetComponent(typeof(Room)); 
-        GameObject to = GameObject.Find("Room:"+toid); 
-        Room rto = (Room)to.GetComponent(typeof(Room)); 
+    
+    public int MoveRoom(int id, string dir) {
+        int toid = -1;
+        if (dir == "north") { // +1
+            if (id == 0) {
+                toid = 1;
+            }
+            else if(id == 1) {
+                toid = 2;
+            }
+            else if (id == 3) {
+                toid = 4;
+            }
+            else if (id == 4) {
+                toid = 5;
+            }
+            else if (id == 6) {
+                toid = 7;
+            }
+            else if (id == 7) {
+                toid = 8;
+            }
+            else if (id == 9) {
+                toid = 10;
+            }
+            else if (id == 10) {
+                toid = 11;
+            }
+            else {
+                toid = -1;
+            }
+        }
+        else if (dir == "east") { //+3
+            if (id == 0) {
+                toid = 3;
+            }
+            else if (id == 1) {
+                toid = 4;
+            }
+            else if (id == 2) {
+                toid = 5;
+            }
+            else if (id == 3) {
+                toid = 6;
+            }
+            else if (id == 4) {
+                toid = 7;
+            }
+            else if (id == 5) {
+                toid = 8;
+            }
+            else if (id == 6) {
+                toid = 9;
+            }
+            else if (id == 7) {
+                toid = 10;
+            }
+            else if (id == 8) {
+                toid = 11;
+            }
+            else {
+                toid = -1;
+            }
+        }
+        else if (dir == "south") { // -1
+            if (id == 2) {
+                toid = 1;
+            }
+            else if (id == 1) {
+                toid = 0;
+            }
+            else if (id == 5) {
+                toid = 4;
+            }
+            else if (id == 4) {
+                toid = 3;
+            }
+            else if (id == 8) {
+                toid = 7;
+            }
+            else if (id == 7) {
+                toid = 6;
+            }
+            else if (id == 11) {
+                toid = 10;
+            }
+            else if (id == 10) {
+                toid = 9;
+            }
+            else {
+                toid = -1;
+            }
+        }
+        else if (dir == "west") { //-3
+            if (id == 3) {
+                toid = 0;
+            }
+            else if (id == 4) {
+                toid = 1;
+            }
+            else if (id == 5) {
+                toid = 2;
+            }
+            else if (id == 6) {
+                toid = 3;
+            }
+            else if (id == 7) {
+                toid = 4;
+            }
+            else if (id == 8) {
+                toid = 5;
+            }
+            else if (id == 9) {
+                toid = 6;
+            }
+            else if (id == 10) {
+                toid = 7;
+            }
+            else if (id == 11) {
+                toid = 8;
+            }
+            else {
+                toid = -1;
+            }
+        }
+        return toid;
     }
 
-	bool checkroom(GameObject from, GameObject to, Room rfr, Room rto){
-		if(true){
-			
-		}
-		
-		return false;
-	}
+    public void changeRoom(string dir){
+        int fromid = whatroom();
+        int toid = MoveRoom(fromid, dir);
+        if (toid == -1) {
+            Debug.Log("Cant move that way!");
+            return;
+        }
+        GameObject p = GameObject.FindGameObjectWithTag("Player");       
+        GameObject fromm = GameObject.Find("Room:"+fromid);
+        Room rfrom = (Room)fromm.GetComponent(typeof(Room)); 
+        GameObject to = GameObject.Find("Room:"+toid); 
+        Room rto = (Room)to.GetComponent(typeof(Room));
+
+        rfrom.SetRoom(false);
+        rfrom.disablecam();
+        rto.teleport(dir, p);
+    }
+
+    public int whatroom(){
+        for (int i = 0; i < allRooms.Length; i++) {
+            GameObject p = GameObject.Find("Room:"+i);
+            
+            Room r = (Room)p.GetComponent(typeof(Room));
+            if (r.currentRoom) {
+
+                return r.getID();
+            }
+
+        }
+            return -1;
+    }
 
     void OnDrawGizmos() {
 

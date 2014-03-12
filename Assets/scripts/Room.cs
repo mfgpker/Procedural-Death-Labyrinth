@@ -6,28 +6,38 @@ public class Room : MonoBehaviour {
     private GameObject doorE, doorW, doorN, doorS;
     private GameObject spawnE, spawnW, spawnN, spawnS;
     private Vector3 size;
-    static Room init;
-    static float x, y;
-    static public int ID;
-    public bool clear;
-    private Camera mainCamera;
+    private bool isBoosRoom = false;
 
-    private static Room instance = null;
-    public static Room SharedInstance {
-        get {
-            if (instance == null) {
-                instance = new Room();
-            }
-            return instance;
-        }
+    public int ID;
+    public bool clear;
+    private GameObject mainCamera;
+
+    public bool currentRoom = false;
+
+    public void SetRoom(bool g) {
+        currentRoom = g;
     }
 
+    public void disablecam() {
+        mainCamera.SetActive(false);
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setBossroom(bool g) {
+        isBoosRoom = g;
+    }
+
+    public bool getBossRoom() {
+        return isBoosRoom;
+    }
 	// Use this for initialization
 	void Start () {
-        init = this;
-        x = transform.position.x;
-        y = transform.position.y;
-        mainCamera = GameObject.FindWithTag("MainCamera").camera;
+
+       
+        mainCamera = transform.FindChild("Camera").gameObject;
 
         doorN =transform.FindChild("DoorN").gameObject;
         doorS = transform.FindChild("DoorS").gameObject;
@@ -35,11 +45,11 @@ public class Room : MonoBehaviour {
         doorE = transform.FindChild("DoorE").gameObject;
 
         spawnN = transform.FindChild("spawnN").gameObject;
-        spawnE = transform.FindChild("spawnS").gameObject;
+        spawnE = transform.FindChild("spawnE").gameObject;
         spawnW = transform.FindChild("spawnW").gameObject;
-        spawnS = transform.FindChild("spawnE").gameObject;
+        spawnS = transform.FindChild("spawnS").gameObject;
 
-        size = transform.FindChild("ground").renderer.bounds.size;
+        //size = transform.FindChild("ground").renderer.bounds.size;
        
 	}
 
@@ -52,14 +62,31 @@ public class Room : MonoBehaviour {
        
 	}
 
-
-    public bool controlexist() {
-
-        return false;
+    public void teleport(string dir, GameObject play) {
+        if (dir == "west") {
+            play.transform.position = spawnE.transform.position;
+        }
+        else if (dir == "east") {
+            play.transform.position = spawnW.transform.position;
+        }
+        else if (dir == "north") {
+            play.transform.position = spawnS.transform.position;
+        }
+        else if (dir == "south") {
+            play.transform.position = spawnN.transform.position;
+        }
+        currentRoom = true;
+        mainCamera.SetActive(true);
+       
     }
 
+    void OnGUI() {
+        if(currentRoom) GUI.Label(new Rect(Screen.width / 2, 25, 100, 100), "Room: " + ID);
+    }
+
+
     public void moveCamera() {
-        Vector3 campos = mainCamera.transform.position;
-        mainCamera.transform.position = new Vector3(campos.x, campos.y, campos.z);
+        //ector3 campos = mainCamera.transform.position;
+        //mainCamera.transform.position = new Vector3(campos.x, campos.y, campos.z);
     }
 }
