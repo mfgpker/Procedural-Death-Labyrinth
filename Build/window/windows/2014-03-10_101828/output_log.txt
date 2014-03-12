@@ -1,0 +1,81 @@
+Initialize engine version: 4.3.4f1 (e444f76e01cd)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [igxprd32.dll 6.14.10.5218]
+    Renderer: Intel(R) Ivybridge Mobile
+    Vendor:   Intel
+    VRAM:     64 MB (via fallback)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: Z:\home\frank\workspace\Procedural-Death-Jam\Build\window\windows\die_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading Z:\home\frank\workspace\Procedural-Death-Jam\Build\window\windows\die_Data\Managed\UnityEngine.dll into Unity Child Domain
+Crash!!!
+SymInit: Symbol-SearchPath: '.;Z:\home\frank\workspace\Procedural-Death-Jam\Build\window\windows;Z:\home\frank\workspace\Procedural-Death-Jam\Build\window\windows;C:\windows;C:\windows\system32;SRV*c:\websymbols*http://msdl.microsoft.com/download/symbols;', symOptions: 530, UserName: 'frank'
+OS-Version: 5.1.2600 (Service Pack 3) 0x0-0x1
+Z:\home\frank\workspace\Procedural-Death-Jam\Build\window\windows\die.exe:die.exe (00400000), size: 11948032 (result: 0), SymType: '-nosymbols-', PDB: 'Z:\home\frank\workspace\Procedural-Death-Jam\Build\window\windows\die.exe', fileVersion: 4.3.4.31067
+C:\windows\system32\ntdll.dll:ntdll.dll (7BC10000), size: 864256 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\ntdll.dll', fileVersion: 5.1.2600.2180
+C:\windows\system32\KERNEL32.dll:KERNEL32.dll (7B810000), size: 2306048 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\KERNEL32.dll', fileVersion: 5.1.2600.2180
+C:\windows\system32\user32.dll:user32.dll (7EAA0000), size: 1417216 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\user32.dll', fileVersion: 5.1.2600.2180
+C:\windows\system32\gdi32.dll:gdi32.dll (7E9C0000), size: 831488 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\gdi32.dll', fileVersion: 10.0.0.0
+C:\windows\system32\advapi32.dll:advapi32.dll (7E950000), size: 376832 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\advapi32.dll', fileVersion: 5.1.2600.2180
+C:\windows\system32\version.dll:version.dll (7EFF0000), size: 65536 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\version.dll', fileVersion: 5.1.2600.2180
+C:\windows\system32\ole32.dll:ole32.dll (7E7F0000), size: 1355776 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\ole32.dll', fileVersion: 10.0.0.0
+C:\windows\system32\rpcrt4.dll:rpcrt4.dll (7E760000), size: 499712 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\rpcrt4.dll', fileVersion: 5.1.2600.2180
+C:\windows\system32\shlwapi.dll:shlwapi.dll (7E6F0000), size: 397312 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\shlwapi.dll', fileVersion: 6.0.2800.1692
+C:\windows\system32\shell32.dll:shell32.dll (7E4B0000), size: 2273280 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\shell32.dll', fileVersion: 5.0.3900.6975
+C:\windows\system32\comctl32.dll:comctl32.dll (7E390000), size: 1101824 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\comctl32.dll', fileVersion: 5.81.4704.1100
+C:\windows\system32\opengl32.dll:opengl32.dll (7E2C0000), size: 778240 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\opengl32.dll', fileVersion: 5.1.2600.2082
+C:\windows\system32\winmm.dll:winmm.dll (7DFA0000), size: 708608 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\winmm.dll'
+C:\windows\system32\msacm32.dll:msacm32.dll (7DF70000), size: 159744 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\msacm32.dll'
+C:\windows\system32\ws2_32.dll:ws2_32.dll (7DF40000), size: 172032 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\ws2_32.dll', fileVersion: 5.1.2600.5512
+C:\windows\system32\oleaut32.dll:oleaut32.dll (7DE10000), size: 1208320 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\oleaut32.dll', fileVersion: 6.0.6001.18000
+C:\windows\system32\imm32.dll:imm32.dll (7DDE0000), size: 77824 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\imm32.dll', fileVersion: 5.1.2600.2180
+C:\windows\system32\dnsapi.dll:dnsapi.dll (7DDB0000), size: 126976 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\dnsapi.dll', fileVersion: 5.2.3790.4318
+C:\windows\system32\netapi32.dll:netapi32.dll (7DD70000), size: 155648 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\netapi32.dll'
+C:\windows\system32\iphlpapi.dll:iphlpapi.dll (7DD50000), size: 94208 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\iphlpapi.dll', fileVersion: 5.1.2600.2180
+C:\windows\system32\winhttp.dll:winhttp.dll (7DD10000), size: 204800 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\winhttp.dll', fileVersion: 5.1.2600.2180
+C:\windows\system32\hid.dll:hid.dll (7E2A0000), size: 20480 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\hid.dll', fileVersion: 10.0.0.0
+C:\windows\system32\winex11.drv:winex11.drv (7DB80000), size: 696320 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\winex11.drv', fileVersion: 10.0.0.0
+C:\windows\system32\uxtheme.dll:uxtheme.dll (7DA20000), size: 167936 (result: 0), SymType: 'DIA', PDB: 'C:\windows\system32\uxtheme.dll', fileVersion: 10.0.0.0
+Z:\home\frank\workspace\Procedural-Death-Jam\Build\window\windows\die_Data\Mono\mono.dll:mono.dll (10000000), size: 2285568 (result: 0), SymType: '-nosymbols-', PDB: 'Z:\home\frank\workspace\Procedural-Death-Jam\Build\window\windows\die_Data\Mono\mono.dll'
+C:\windows\system32\psapi.dll:psapi.dll (F73F0000), size: 65536 (result: 87), SymType: '-unknown-', PDB: '', fileVersion: 5.1.2600.3264
+C:\windows\system32\mswsock.dll:mswsock.dll (F73E0000), size: 49152 (result: 87), SymType: '-unknown-', PDB: '', fileVersion: 4.0.0.0
+C:\windows\system32\d3d9.dll:d3d9.dll (F73A0000), size: 225280 (result: 87), SymType: '-unknown-', PDB: '', fileVersion: 5.3.1.904
+C:\windows\system32\wined3d.dll:wined3d.dll (F7230000), size: 1466368 (result: 87), SymType: '-unknown-', PDB: '', fileVersion: 10.0.0.0
+C:\windows\system32\wbemprox.dll:wbemprox.dll (F7210000), size: 36864 (result: 87), SymType: '-unknown-', PDB: ''
+C:\windows\system32\mmdevapi.dll:mmdevapi.dll (F62C0000), size: 126976 (result: 87), SymType: '-unknown-', PDB: ''
+C:\windows\system32\winealsa.drv:winealsa.drv (F6290000), size: 172032 (result: 87), SymType: '-unknown-', PDB: ''
+C:\windows\system32\dsound.dll:dsound.dll (F58D0000), size: 286720 (result: 87), SymType: '-unknown-', PDB: '', fileVersion: 5.3.1.904
+C:\windows\system32\dbghelp.dll:dbghelp.dll (F5860000), size: 430080 (result: 87), SymType: '-unknown-', PDB: '', fileVersion: 5.1.2600.3264
+C:\windows\system32\msvcrt.dll:msvcrt.dll (F5100000), size: 548864 (result: 87), SymType: '-unknown-', PDB: '', fileVersion: 7.0.2600.2180
+
+========== OUTPUTING STACK TRACE ==================
+
+(0x00524E87) (die): (filename not available): (function-name not available) + 0x0
+(0x00523ABD) (die): (filename not available): (function-name not available) + 0x0
+(0x0059E119) (die): (filename not available): (function-name not available) + 0x0
+(0x0059E26E) (die): (filename not available): (function-name not available) + 0x0
+(0x0059E075) (die): (filename not available): (function-name not available) + 0x0
+(0x0051B3D6) (die): (filename not available): (function-name not available) + 0x0
+(0x0051B6EB) (die): (filename not available): (function-name not available) + 0x0
+(0x0051BB21) (die): (filename not available): (function-name not available) + 0x0
+(0x0051BDF3) (die): (filename not available): (function-name not available) + 0x0
+(0x005BCF52) (die): (filename not available): (function-name not available) + 0x0
+(0x00407C03) (die): (filename not available): (function-name not available) + 0x0
+(0x0040FDE3) (die): (filename not available): (function-name not available) + 0x0
+(0x004104BD) (die): (filename not available): (function-name not available) + 0x0
+(0x00588E58) (die): (filename not available): (function-name not available) + 0x0
+(0x005E1D64) (die): (filename not available): (function-name not available) + 0x0
+(0x0082EB28) (die): (filename not available): (function-name not available) + 0x0
+(0x00860490) (die): (filename not available): (function-name not available) + 0x0
+(0x7B861D48) (kernel32): (filename not available): call_process_entry + 0xc
+(0x7B861E8D) (kernel32): (filename not available): call_process_entry + 0x151
+(0x7BC7EDFC) (ntdll): (filename not available): call_thread_func_wrapper + 0xc
+(0x7BC7EE4B) (ntdll): (filename not available): call_thread_func + 0x45
+(0x7BC7EDDA) (ntdll): (filename not available): (function-name not available) + 0x0
+(0x7BC545BF) (ntdll): (filename not available): LdrInitializeThunk + 0x0
+(0xF7606B5D) ((module-name not available)): (filename not available): (function-name not available) + 0x0
+
+========== END OF STACKTRACE ===========
+
+**** Crash! ****

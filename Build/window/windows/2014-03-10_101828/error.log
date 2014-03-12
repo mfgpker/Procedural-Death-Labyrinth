@@ -1,0 +1,554 @@
+Unity Player [version: Unity 4.3.4f1_e444f76e01cd]
+
+die.exe caused an Access Violation (0xc0000005)
+  in module die.exe at 0023:00524e87.
+
+Error occurred at 2014-03-10_101830.
+Z:\home\frank\workspace\Procedural-Death-Jam\Build\window\windows\die.exe, run by frank.
+17% memory in use.
+0 MB physical memory [0 MB free].
+0 MB paging file [2048 MB free].
+0 MB user address space [0 MB free].
+Read from location 00000000 caused an access violation.
+
+Context:
+EDI:    0x00000000  ESI: 0x0033f8b0  EAX:   0x00000000
+EBX:    0x00000000  ECX: 0x00000001  EDX:   0x02235d90
+EIP:    0x00524e87  EBP: 0x0033f894  SegCs: 0x00000023
+EFlags: 0x00010287  ESP: 0x0033f7c4  SegSs: 0x0000002b
+
+Bytes at CS:EIP:
+8a 10 40 3a d3 75 f9 2b c1 50 57 8d 4e 38 e8 76 
+
+Stack:
+0x0033f7c4: 0033f998 0000000f 00000000 02099f00 ..3.............
+0x0033f7d4: 025e02c0 0033f808 025e0742 00000000 ..^...3.B.^.....
+0x0033f7e4: 0000000f 00000002 00000000 00000000 ................
+0x0033f7f4: 00000000 00000000 02014810 7ffd8000 .........H......
+0x0033f804: 00000000 02235d90 0033f88c 0033f888 .....]#...3...3.
+0x0033f814: 025e0300 020a0cc0 00000000 02014871 ..^.........qH..
+0x0033f824: 00000000 0000000f 0033f870 025e0200 ........p.3...^.
+0x0033f834: 0033f998 02099fe0 0033f888 00000000 ..3.......3.....
+0x0033f844: 0000000f 0033f888 025e4b47 02235d90 ......3.GK^..]#.
+0x0033f854: 025e02c0 0033f85c 00000000 0033f888 ..^.\.3.......3.
+0x0033f864: 02014870 02014818 02099fe0 025e4b31 pH...H......1K^.
+0x0033f874: 025e02c0 0033f998 02099fe0 0033f888 ..^...3.......3.
+0x0033f884: 00000000 00000000 00000000 00000000 ................
+0x0033f894: 0033f944 00523abd ffffffff 0033f8b0 D.3..:R.......3.
+0x0033f8a4: 0033f998 0033f9ac 012bd748 7bc33d00 ..3...3.H.+..=.{
+0x0033f8b4: 02235d90 00000000 02235d90 00000000 .]#......]#.....
+0x0033f8c4: 0000000f 0033f8a0 02099f00 0033f900 ......3.......3.
+0x0033f8d4: 100efede 00000000 00000000 0000000f ................
+0x0033f8e4: 025e0220 00010000 012bd748 020961e8  .^.....H.+..a..
+0x0033f8f4: 00000000 00000000 0000000f 0033f924 ............$.3.
+0x0033f904: 1005d680 02096100 00000000 0033f9f0 .....a........3.
+0x0033f914: 1005d68a 00000000 0000000f 012bd748 ............H.+.
+0x0033f924: 0033f940 005249a8 020961e8 00000000 @.3..IR..a......
+0x0033f934: 0033f9f0 0033f998 0033f9ac 0033f97c ..3...3...3.|.3.
+0x0033f944: 0033f97c 0059e119 02235d90 00000000 |.3...Y..]#.....
+0x0033f954: 0033f960 012b2dc0 00000002 0059d200 `.3..-+.......Y.
+0x0033f964: 02096108 00c2ced0 00000000 00000000 .a..............
+0x0033f974: 0000000f 0059e009 0033f98c 0059e26e ......Y...3.n.Y.
+0x0033f984: 0033f998 00000000 0033f99c 0059e075 ..3.......3.u.Y.
+0x0033f994: 0033f998 02235d90 0033faa4 0051b3d6 ..3..]#...3...Q.
+0x0033f9a4: 012bd748 012a8a08 00c3d428 012b9044 H.+...*.(...D.+.
+0x0033f9b4: 00000000 00000000 00000000 00000001 ................
+0x0033f9c4: 02235d90 00000000 00000000 00000000 .]#.............
+0x0033f9d4: 00000000 00000000 00000000 00000000 ................
+0x0033f9e4: 00000000 00000000 00000000 00000000 ................
+0x0033f9f4: 00000000 00000000 00000000 00000000 ................
+0x0033fa04: 00000000 00000000 00000000 00000000 ................
+0x0033fa14: 00000000 00000000 00000000 00000000 ................
+0x0033fa24: 00000000 00000000 00000000 00000000 ................
+0x0033fa34: 00000000 00000000 00000000 00000000 ................
+0x0033fa44: 0033fa5c 00404f08 00000004 00000004 \.3..O@.........
+0x0033fa54: 00ddfed0 00000004 0033fa78 012bdcf8 ........x.3...+.
+0x0033fa64: 00000004 00000004 012a8a08 00000017 ..........*.....
+0x0033fa74: 0000001f 0033faa0 00403095 0033faac ......3..0@...3.
+0x0033fa84: 012b2dc0 0033faf0 0051b6de 012b2f58 .-+...3...Q.X/+.
+0x0033fa94: 012b2dc0 00000000 00000001 01000000 .-+.............
+0x0033faa4: 0033faf0 0051b6eb 012b2f58 00000002 ..3...Q.X/+.....
+0x0033fab4: 00000001 012bd748 00000000 0000000c ....H.+.........
+0x0033fac4: 012bdc7c 012bdcec 012bdcec 0051afc2 |.+...+...+...Q.
+0x0033fad4: 012bdbf4 00000033 01811eb0 012bd748 ..+.3.......H.+.
+0x0033fae4: 0000000c 012bdbf4 012bd748 0033fb24 ......+.H.+.$.3.
+0x0033faf4: 0051bb21 00000000 01811eb0 012bd748 !.Q.........H.+.
+0x0033fb04: 00000000 00000000 00000000 00000000 ................
+0x0033fb14: 00000000 0000000f 00376615 00000000 .........f7.....
+0x0033fb24: 0033fb44 0051bdf3 012a8a9c 00000003 D.3...Q...*.....
+0x0033fb34: 00000001 012881f0 005b4211 00000001 ......(..B[.....
+0x0033fb44: 0033fb84 005bcf52 012bd748 00000000 ..3.R.[.H.+.....
+0x0033fb54: 00000001 ffffff00 00000000 00000074 ............t...
+0x0033fb64: 0033fbbc 0000006c 00000000 00000006 ..3.l...........
+0x0033fb74: 00000000 ffffff00 0128826c 012bd748 ........l.(.H.+.
+0x0033fb84: 0033fbb0 00407c03 0000000c 012b2e5c ..3..|@.....\.+.
+0x0033fb94: 01286dc4 01808028 01808028 01286dc4 .m(.(...(....m(.
+0x0033fba4: 01808028 01808028 0000000c 0033fbc0 (...(.........3.
+0x0033fbb4: 0040fde3 00000000 0000000c 0033fc2c ..@.........,.3.
+0x0033fbc4: 004104bd 00000074 00000010 00000000 ..A.t...........
+0x0033fbd4: 00000000 6e69616d 61746144 00000000 ....mainData....
+0x0033fbe4: 00de2358 00000008 0000000f 0000000f X#..............
+0x0033fbf4: 012b9a78 69756226 343d646c 342e332e x.+.&build=4.3.4
+0x0033fc04: 00003166 0000000e 0000000f 00000000 f1..............
+0x0033fc14: 012b2dd4 012b2e5c 012b2e6c 00373534 .-+.\.+.l.+.457.
+0x0033fc24: 00000005 0000000f 0033fc7c 00588e58 ........|.3.X.X.
+0x0033fc34: 0033fc60 00c32b44 00000000 00000001 `.3.D+..........
+0x0033fc44: 012af800 00000033 0033fc80 005e12bb ..*.3.....3...^.
+0x0033fc54: 00000000 0000000f 012af814 00000010 ..........*.....
+0x0033fc64: 0000000f 0033fc78 0000001a 0000001f ....x.3.........
+0x0033fc74: 0033fd98 005e1c00 0033fd98 005e1d64 ..3...^...3.d.^.
+0x0033fc84: 00000000 00000000 00000000 7b8af000 ...............{
+0x0033fc94: 012878f0 01075014 ffffffff 0033fcb0 .x(..P........3.
+0x0033fca4: 00000041 0000004f 00000000 01288100 A...O.........(.
+0x0033fcb4: 7bc33dee 01075064 ffffffff 00000000 .=.{dP..........
+0x0033fcc4: 0000000f 01075064 6f6e6f00 6374652f ....dP...ono/etc
+0x0033fcd4: 7ffd8000 00110000 00000000 0000000f ................
+0x0033fce4: 7bc4c294 012880e8 01288120 01288120 ...{..(. .(. .(.
+0x0033fcf4: ffffffff 01287894 7bc348a0 00e31114 .....x(..H.{....
+0x0033fd04: 00000000 0000004a 0000004f 00000400 ....J...O.......
+0x0033fd14: 0118873c 012879b8 00000004 0033fc58 <....y(.....X.3.
+0x0033fd24: 00e31114 00000059 0000005f 49656e69 ....Y..._...ineI
+0x0033fd34: 01288200 7ffd8000 00000002 010777a8 ..(..........w..
+0x0033fd44: 00000000 0000000f 0033fd7c 00000000 ........|.3.....
+0x0033fd54: 616e614d 00646567 00863963 00000000 Managed.c9......
+0x0033fd64: 00000007 0000000f 00863970 0118873c ........p9..<...
+0x0033fd74: 6f6e6f4d 6e6f6d2f 6c642e6f 0000006c Mono/mono.dll...
+0x0033fd84: 0000000d 0000000f 010765c0 00000000 .........e......
+0x0033fd94: 00000000 0033fdb0 0082eb28 00400000 ......3.(.....@.
+0x0033fda4: 00000000 00139fb3 0000000a 0033fe40 ............@.3.
+0x0033fdb4: 00860490 00400000 00000000 00139fb3 ......@.........
+0x0033fdc4: 0000000a b320b22e 00000000 ffb65694 ...... ......V..
+0x0033fdd4: 7b8af000 00000044 00000000 00220778 ...{D.......x.".
+0x0033fde4: 002206e4 00000000 00000000 00000000 ..".............
+0x0033fdf4: 00000000 00000000 00000000 00000000 ................
+0x0033fe04: 00000000 00000000 00000000 00000004 ................
+0x0033fe14: ffffffff ffffffff c0000005 ffb65694 .............V..
+0x0033fe24: 00000000 0033fdc8 0033f2a8 0033fee0 ......3...3...3.
+0x0033fe34: 00861c60 b3c9d0de 00000000 0033fe58 `...........X.3.
+0x0033fe44: 7b861d48 7ffdf000 00000000 00000000 H..{............
+0x0033fe54: 7b8af000 0033fea8 7b861e8d 7ffdf000 ...{..3....{....
+0x0033fe64: 008604e3 00000000 00000000 00000000 ................
+0x0033fe74: 00000000 00000000 00000000 00000000 ................
+0x0033fe84: 00000000 00400130 008604e3 00000000 ....0.@.........
+0x0033fe94: 00000000 00000000 00000000 00000000 ................
+0x0033fea4: 7bcc7000 0033feb8 7bc7edfc 7ffdf000 .p.{..3....{....
+0x0033feb4: ffffffff 0033ff98 7bc7ee4b 7b861d4a ......3.K..{J..{
+0x0033fec4: 7ffdf000 00000000 00000000 00000000 ................
+0x0033fed4: 00000000 00000000 00000000 ffffffff ................
+0x0033fee4: 7bc9810f 7b83be4a 7bcc7000 ffb65694 ...{J..{.p.{.V..
+0x0033fef4: 00000000 0033ff98 c35c7928 2b7d01df ......3.(y\...}+
+0x0033ff04: 00000000 00000000 00000000 00000000 ................
+0x0033ff14: 00000000 00000000 00000000 00000000 ................
+0x0033ff24: 00000000 00000000 00000000 00000000 ................
+0x0033ff34: 00000000 00000000 00000000 00000000 ................
+0x0033ff44: 00000000 00000000 00000000 00000000 ................
+0x0033ff54: 00000000 00000000 00000000 00000000 ................
+0x0033ff64: 00000000 00000000 00000000 00000000 ................
+0x0033ff74: 00000000 00000000 00000000 00000000 ................
+0x0033ff84: 00000000 00000000 00000000 00000000 ................
+0x0033ff94: f772e000 0033ffb8 7bc7edda 7b861d4a ..r...3....{J..{
+0x0033ffa4: 7ffdf000 0033ffb8 00000000 ffb65694 ......3......V..
+0x0033ffb4: f772e000 0033ffe8 7bc545bf 7b861d4a ..r...3..E.{J..{
+0x0033ffc4: 7ffdf000 00000000 00000000 00000000 ................
+0x0033ffd4: 00000000 00000000 7ffd8000 00000000 ................
+0x0033ffe4: 00000000 00000000 f7606b5d 7b861d4a ........]k`.J..{
+0x0033fff4: 00000000 00000000 00000000          ............
+
+Module 1
+Z:\home\frank\workspace\Procedural-Death-Jam\Build\window\windows\die.exe
+Image Base: 0x00400000  Image Size: 0x00b65000
+File Size:  11288064    File Time:  2014-01-23_232148
+Version:
+   Company:    
+   Product:    
+   FileDesc:   
+   FileVer:    4.3.4.31067
+   ProdVer:    4.3.4.31067
+
+Module 2
+Z:\home\frank\workspace\Procedural-Death-Jam\Build\window\windows\die_Data\Mono\mono.dll
+Image Base: 0x10000000  Image Size: 0x0022e000
+File Size:  2100224     File Time:  2014-01-23_232146
+Version:
+   Company:    
+   Product:    
+   FileDesc:   
+   FileVer:    0.0.0.0
+   ProdVer:    0.0.0.0
+
+Module 3
+C:\windows\system32\KERNEL32.dll
+Image Base: 0x7b810000  Image Size: 0x00233000
+File Size:  1603468     File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine core dll
+   FileVer:    5.1.2600.2180
+   ProdVer:    5.1.2600.2180
+
+Module 4
+C:\windows\system32\ntdll.dll
+Image Base: 0x7bc10000  Image Size: 0x000d3000
+File Size:  2468        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine ntdll
+   FileVer:    5.1.2600.2180
+   ProdVer:    5.1.2600.2180
+
+Module 5
+C:\windows\system32\uxtheme.dll
+Image Base: 0x7da20000  Image Size: 0x00029000
+File Size:  2448        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine core dll
+   FileVer:    10.0.0.0
+   ProdVer:    1.0.0.0
+
+Module 6
+C:\windows\system32\winex11.drv
+Image Base: 0x7db80000  Image Size: 0x000aa000
+File Size:  2452        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine X11 driver
+   FileVer:    10.0.0.0
+   ProdVer:    1.0.0.0
+
+Module 7
+C:\windows\system32\winhttp.dll
+Image Base: 0x7dd10000  Image Size: 0x00032000
+File Size:  17440       File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine HTTP Library
+   FileVer:    5.1.2600.2180
+   ProdVer:    1.0.0.0
+
+Module 8
+C:\windows\system32\iphlpapi.dll
+Image Base: 0x7dd50000  Image Size: 0x00017000
+File Size:  2480        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine iphlpapi
+   FileVer:    5.1.2600.2180
+   ProdVer:    5.1.2600.2180
+
+Module 9
+C:\windows\system32\netapi32.dll
+Image Base: 0x7dd70000  Image Size: 0x00026000
+File Size:  1032        File Time:  2014-02-01_114838
+Version:
+   Company:    
+   Product:    
+   FileDesc:   
+   FileVer:    0.0.0.0
+   ProdVer:    0.0.0.0
+
+Module 10
+C:\windows\system32\dnsapi.dll
+Image Base: 0x7ddb0000  Image Size: 0x0001f000
+File Size:  2452        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine dnsapi
+   FileVer:    5.2.3790.4318
+   ProdVer:    1.0.0.0
+
+Module 11
+C:\windows\system32\imm32.dll
+Image Base: 0x7dde0000  Image Size: 0x00013000
+File Size:  2468        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine imm32
+   FileVer:    5.1.2600.2180
+   ProdVer:    5.1.2600.2180
+
+Module 12
+C:\windows\system32\oleaut32.dll
+Image Base: 0x7de10000  Image Size: 0x00127000
+File Size:  21176       File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine OLE dll
+   FileVer:    6.0.6001.18000
+   ProdVer:    1.0.0.0
+
+Module 13
+C:\windows\system32\ws2_32.dll
+Image Base: 0x7df40000  Image Size: 0x0002a000
+File Size:  2476        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine core dll
+   FileVer:    5.1.2600.5512
+   ProdVer:    5.1.2600.5512
+
+Module 14
+C:\windows\system32\msacm32.dll
+Image Base: 0x7df70000  Image Size: 0x00027000
+File Size:  22232       File Time:  2014-02-01_114838
+Version:
+   Company:    
+   Product:    
+   FileDesc:   
+   FileVer:    0.0.0.0
+   ProdVer:    0.0.0.0
+
+Module 15
+C:\windows\system32\winmm.dll
+Image Base: 0x7dfa0000  Image Size: 0x000ad000
+File Size:  450284      File Time:  2014-02-01_114838
+Version:
+   Company:    
+   Product:    
+   FileDesc:   
+   FileVer:    0.0.0.0
+   ProdVer:    0.0.0.0
+
+Module 16
+C:\windows\system32\hid.dll
+Image Base: 0x7e2a0000  Image Size: 0x00005000
+File Size:  2440        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine core dll
+   FileVer:    10.0.0.0
+   ProdVer:    1.0.0.0
+
+Module 17
+C:\windows\system32\opengl32.dll
+Image Base: 0x7e2c0000  Image Size: 0x000be000
+File Size:  2472        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine OpenGL Client
+   FileVer:    5.1.2600.2082
+   ProdVer:    5.1.2600.2082
+
+Module 18
+C:\windows\system32\comctl32.dll
+Image Base: 0x7e390000  Image Size: 0x0010d000
+File Size:  175928      File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine Common Controls
+   FileVer:    5.81.4704.1100
+   ProdVer:    5.81.4704.1100
+
+Module 19
+C:\windows\system32\shell32.dll
+Image Base: 0x7e4b0000  Image Size: 0x0022b000
+File Size:  1399952     File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine core dll
+   FileVer:    5.0.3900.6975
+   ProdVer:    1.0.0.0
+
+Module 20
+C:\windows\system32\shlwapi.dll
+Image Base: 0x7e6f0000  Image Size: 0x00061000
+File Size:  19196       File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine core dll
+   FileVer:    6.0.2800.1692
+   ProdVer:    6.0.2800.1692
+
+Module 21
+C:\windows\system32\rpcrt4.dll
+Image Base: 0x7e760000  Image Size: 0x0007a000
+File Size:  2472        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine rpcrt4
+   FileVer:    5.1.2600.2180
+   ProdVer:    5.1.2600.2180
+
+Module 22
+C:\windows\system32\ole32.dll
+Image Base: 0x7e7f0000  Image Size: 0x0014b000
+File Size:  19576       File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine core dll
+   FileVer:    10.0.0.0
+   ProdVer:    1.0.0.0
+
+Module 23
+C:\windows\system32\advapi32.dll
+Image Base: 0x7e950000  Image Size: 0x0005c000
+File Size:  2488        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine advapi32 dll
+   FileVer:    5.1.2600.2180
+   ProdVer:    5.1.2600.2180
+
+Module 24
+C:\windows\system32\gdi32.dll
+Image Base: 0x7e9c0000  Image Size: 0x000cb000
+File Size:  13776       File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine core dll
+   FileVer:    10.0.0.0
+   ProdVer:    1.0.0.0
+
+Module 25
+C:\windows\system32\user32.dll
+Image Base: 0x7eaa0000  Image Size: 0x0015a000
+File Size:  225636      File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine core dll
+   FileVer:    5.1.2600.2180
+   ProdVer:    5.1.2600.2180
+
+Module 26
+C:\windows\system32\version.dll
+Image Base: 0x7eff0000  Image Size: 0x00010000
+File Size:  2484        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine version dll
+   FileVer:    5.1.2600.2180
+   ProdVer:    5.1.2600.2180
+
+Module 27
+C:\windows\system32\msvcrt.dll
+Image Base: 0xf5100000  Image Size: 0x00086000
+File Size:  2456        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine CRT library
+   FileVer:    7.0.2600.2180
+   ProdVer:    1.0.0.0
+
+Module 28
+C:\windows\system32\dbghelp.dll
+Image Base: 0xf5860000  Image Size: 0x00069000
+File Size:  2484        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine Image Helper
+   FileVer:    5.1.2600.3264
+   ProdVer:    5.1.2600.3264
+
+Module 29
+C:\windows\system32\dsound.dll
+Image Base: 0xf58d0000  Image Size: 0x00046000
+File Size:  3796        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine DirectSound
+   FileVer:    5.3.1.904
+   ProdVer:    5.3.1.904
+
+Module 30
+C:\windows\system32\winealsa.drv
+Image Base: 0xf6290000  Image Size: 0x0002a000
+File Size:  1032        File Time:  2014-02-01_114836
+Version:
+   Company:    
+   Product:    
+   FileDesc:   
+   FileVer:    0.0.0.0
+   ProdVer:    0.0.0.0
+
+Module 31
+C:\windows\system32\mmdevapi.dll
+Image Base: 0xf62c0000  Image Size: 0x0001f000
+File Size:  1952        File Time:  2014-02-01_114838
+Version:
+   Company:    
+   Product:    
+   FileDesc:   
+   FileVer:    0.0.0.0
+   ProdVer:    0.0.0.0
+
+Module 32
+C:\windows\system32\wbemprox.dll
+Image Base: 0xf7210000  Image Size: 0x00009000
+File Size:  1924        File Time:  2014-02-01_114838
+Version:
+   Company:    
+   Product:    
+   FileDesc:   
+   FileVer:    0.0.0.0
+   ProdVer:    0.0.0.0
+
+Module 33
+C:\windows\system32\wined3d.dll
+Image Base: 0xf7230000  Image Size: 0x00166000
+File Size:  2444        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine D3D
+   FileDesc:   Wine D3D
+   FileVer:    10.0.0.0
+   ProdVer:    1.0.0.0
+
+Module 34
+C:\windows\system32\d3d9.dll
+Image Base: 0xf73a0000  Image Size: 0x00037000
+File Size:  2456        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine Direct3D
+   FileVer:    5.3.1.904
+   ProdVer:    5.3.1.904
+
+Module 35
+C:\windows\system32\mswsock.dll
+Image Base: 0xf73e0000  Image Size: 0x0000c000
+File Size:  2444        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine core dll
+   FileVer:    4.0.0.0
+   ProdVer:    4.0.0.0
+
+Module 36
+C:\windows\system32\psapi.dll
+Image Base: 0xf73f0000  Image Size: 0x00010000
+File Size:  2500        File Time:  2014-02-01_114838
+Version:
+   Company:    Microsoft Corporation
+   Product:    Wine
+   FileDesc:   Wine Process Status Helper
+   FileVer:    5.1.2600.3264
+   ProdVer:    5.1.2600.3264
+
+
+== [end of error.log] ==

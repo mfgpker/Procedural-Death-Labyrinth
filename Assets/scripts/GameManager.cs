@@ -57,8 +57,19 @@ public class GameManager : MonoBehaviour {
 
 
     public void changeRoom(int toid, int fromid, string from){
-        //GameObject 
+        GameObject from = GameObject.Find("Room:"+fromid);
+        Room rfrom = (Room)from.GetComponent(typeof(Room)); 
+        GameObject to = GameObject.Find("Room:"+toid); 
+        Room rto = (Room)to.GetComponent(typeof(Room)); 
     }
+
+	bool checkroom(GameObject from, GameObject to, Room rfr, Room rto){
+		if(true){
+			
+		}
+		
+		return false;
+	}
 
     void OnDrawGizmos() {
 
