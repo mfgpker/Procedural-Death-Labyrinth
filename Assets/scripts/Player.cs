@@ -15,7 +15,7 @@ public class Player : MonoBehaviour {
         //collider = GetComponent<BoxCollider>();
 
         
-        GameObject.FindWithTag("MainCamera").camera.transform.position = new Vector3(3.092722f, -0.6933255f, -13.43808f);
+       // GameObject.FindWithTag("MainCamera").camera.transform.position = new Vector3(3.092722f, -0.6933255f, -13.43808f);
 	}
     public float damp = 0.9f; // adjust the damp factor if necessary
 

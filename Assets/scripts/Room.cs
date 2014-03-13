@@ -8,10 +8,12 @@ public class Room : MonoBehaviour {
     private Vector3 size;
     private bool isBoosRoom = false;
 
+    public Texture open, locke, none;
+    
     public int ID;
     public bool clear;
     private GameObject mainCamera;
-
+    public bool notroom = false;
     public bool currentRoom = false;
 
     public void SetRoom(bool g) {
@@ -35,23 +37,73 @@ public class Room : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
+        if (!notroom) {
+            mainCamera = transform.FindChild("Camera").gameObject;
+            doorN = transform.FindChild("DoorN").gameObject;
+            doorS = transform.FindChild("DoorS").gameObject;
+            doorW = transform.FindChild("DoorW").gameObject;
+            doorE = transform.FindChild("DoorE").gameObject;
 
-       
-        mainCamera = transform.FindChild("Camera").gameObject;
+            doorN.renderer.material.mainTexture = open;
+            doorS.renderer.material.mainTexture = open;
+            doorW.renderer.material.mainTexture = open;
+            doorE.renderer.material.mainTexture = open;
 
-        doorN =transform.FindChild("DoorN").gameObject;
-        doorS = transform.FindChild("DoorS").gameObject;
-        doorW = transform.FindChild("DoorW").gameObject;
-        doorE = transform.FindChild("DoorE").gameObject;
+            spawnN = transform.FindChild("spawnN").gameObject;
+            spawnE = transform.FindChild("spawnE").gameObject;
+            spawnW = transform.FindChild("spawnW").gameObject;
+            spawnS = transform.FindChild("spawnS").gameObject;
+        }
 
-        spawnN = transform.FindChild("spawnN").gameObject;
-        spawnE = transform.FindChild("spawnE").gameObject;
-        spawnW = transform.FindChild("spawnW").gameObject;
-        spawnS = transform.FindChild("spawnS").gameObject;
-
-        //size = transform.FindChild("ground").renderer.bounds.size;
-       
 	}
+
+    public void setDoorTexture(string door, string texture){
+        if (door == "doorN") {
+            if (texture == "open") {
+                doorN.renderer.material.mainTexture = open;
+            }
+            else if (texture == "lock") {
+                doorN.renderer.material.mainTexture = locke;
+            }
+            else {
+                doorN.renderer.material.mainTexture = none;
+            }
+        }
+        else if (door == "DoorS") {
+            if (texture == "open") {
+                doorS.renderer.material.mainTexture = open;
+            }
+            else if (texture == "lock") {
+                doorS.renderer.material.mainTexture = locke;
+            }
+            else {
+                doorS.renderer.material.mainTexture = none;
+            }
+        }
+        else if (door == "DoorW") {
+            if (texture == "open") {
+                doorW.renderer.material.mainTexture = open;
+            }
+            else if (texture == "lock") {
+                doorW.renderer.material.mainTexture = locke;
+            }
+            else {
+                doorW.renderer.material.mainTexture = none;
+            }
+        }
+        else if (door == "DoorE") {
+            if (texture == "open") {
+                doorE.renderer.material.mainTexture = open;
+            }
+            else if (texture == "lock") {
+                doorE.renderer.material.mainTexture = locke;
+            }
+            else {
+                doorE.renderer.material.mainTexture = none;
+            }
+        }
+    }
+
 
     void SetID(int id) {
         ID = id;

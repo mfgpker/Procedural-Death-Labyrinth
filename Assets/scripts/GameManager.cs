@@ -31,20 +31,40 @@ public class GameManager : MonoBehaviour {
                 spawnPosition.x += i * (spawnAreaWidth / numberOfRoomX);
                 spawnPosition.y += j * (spawnAreaHeight / numberOfRoomY);
                 spawnPosition.z += 0;
-
-                if (!starter) {
-                    GameObject newstarterroomObject = Instantiate(starterRoom, spawnPosition, transform.rotation) as GameObject;
-                    newstarterroomObject.transform.parent = transform;
-                    starter = true;
-                    newstarterroomObject.transform.name = "Room:" + id;
-                    newstarterroomObject.SendMessage("SetRoom", true);
+                int ran = Random.Range(0, 10);
+               // Debug.Log(ran);
+                if (ran < 5) {
+                    if (!starter) {
+                        GameObject newstarterroomObject = Instantiate(starterRoom, spawnPosition, transform.rotation) as GameObject;
+                        newstarterroomObject.transform.parent = transform;
+                        starter = true;
+                        newstarterroomObject.transform.name = "Room:" + id;
+                        newstarterroomObject.SendMessage("SetRoom", true);
+                    }else{
+                        GameObject RoomObject = Instantiate(Rooms[0], spawnPosition, transform.rotation) as GameObject;
+                        RoomObject.transform.parent = transform;
+                        RoomObject.transform.name = "Room:" + id;
+                    }
                 }
-                else {
-                    GameObject RoomObject = Instantiate(Rooms[0], spawnPosition, transform.rotation) as GameObject;
+                else if (ran >= 6 && ran < 9) {
+                    if (!bossroom) {
+                        GameObject RoomObject = Instantiate(Rooms[1], spawnPosition, transform.rotation) as GameObject;
+                        RoomObject.transform.parent = transform;
+                        RoomObject.transform.name = "Room:" + id;
+                        bossroom = true;
+                        RoomObject.SendMessage("setBossroom", true);
+                    }
+                    else {
+                        GameObject RoomObject = Instantiate(Rooms[0], spawnPosition, transform.rotation) as GameObject;
+                        RoomObject.transform.parent = transform;
+                        RoomObject.transform.name = "Room:" + id;
+                    }
+                } else {
+                    GameObject RoomObject = Instantiate(Rooms[2], spawnPosition, transform.rotation) as GameObject;
                     RoomObject.transform.parent = transform;
                     RoomObject.transform.name = "Room:" + id;
-                    
                 }
+               
                 GameObject r = GameObject.Find("Room:" + id);
                 r.SendMessage("SetID", id);
                 allRooms[id] = r; 
@@ -59,7 +79,32 @@ public class GameManager : MonoBehaviour {
        
 	}
 
-    
+    public int MoveRoom2(int id, string dir) {
+        int toid = -1;
+        if (dir == "north") { // +1
+
+            if (id != 2 || id != 5 || id != 8 || id != 11) {
+                toid = id + 1;
+            }
+        }
+        else if (dir == "east") { //+3
+            if (id != 9 || id != 10 || id != 11) {
+                toid = id + 3;
+            }
+        }
+        else if (dir == "south") { // -1
+            if (id != 0 || id != 3 || id != 6 || id != 9) {
+                toid = id - 1;
+            }
+        }
+        else if (dir == "west") { //-3
+            if (id != 0 || id != 1 || id != 2) {
+                toid = id - 3;
+            }
+        }
+        return toid;
+    }
+
     public int MoveRoom(int id, string dir) {
         int toid = -1;
         if (dir == "north") { // +1
@@ -200,9 +245,17 @@ public class GameManager : MonoBehaviour {
         GameObject to = GameObject.Find("Room:"+toid); 
         Room rto = (Room)to.GetComponent(typeof(Room));
 
+        if (rto.notroom == true) {
+            Debug.Log("Cant move that way!");
+            return;
+        }
         rfrom.SetRoom(false);
         rfrom.disablecam();
         rto.teleport(dir, p);
+    }
+
+    public void roomdoor() {
+
     }
 
     public int whatroom(){

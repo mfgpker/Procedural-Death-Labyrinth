@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class locked : MonoBehaviour {
-    [HideInInspector]
+    
     public bool islocked = true;
 
 	// Use this for initialization
