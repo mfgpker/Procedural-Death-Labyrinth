@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour {
                 id++;
             }
         }
-        
+        roomdoor();
 	}
 	
 	// Update is called once per frame
@@ -255,7 +255,28 @@ public class GameManager : MonoBehaviour {
     }
 
     public void roomdoor() {
-
+		for(GameObject rg in allRooms){
+			Room ro = (Room)rg.GetComponent<Room>();
+			int id = ro.getID();
+			int n,s,w,e;
+			n = MoveRoom(id, "north");
+			s = MoveRoom(id, "south");
+			w = MoveRoom(id, "west");
+			e = MoveRoom(id, "east");
+			
+			if(n == -1){
+				ro.setDoorTexture("doorN", "none")
+			}
+			if(s == -1){
+				ro.setDoorTexture("doorS", "none")
+			}
+			if(w == -1){
+				ro.setDoorTexture("doorW", "none")
+			}
+			if(e == -1){
+				ro.setDoorTexture("doorE", "none")
+			}
+		}
     }
 
     public int whatroom(){
