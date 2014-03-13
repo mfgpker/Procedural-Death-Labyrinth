@@ -44,10 +44,12 @@ public class Room : MonoBehaviour {
             doorW = transform.FindChild("DoorW").gameObject;
             doorE = transform.FindChild("DoorE").gameObject;
 
+            /*
             doorN.renderer.material.mainTexture = open;
             doorS.renderer.material.mainTexture = open;
             doorW.renderer.material.mainTexture = open;
             doorE.renderer.material.mainTexture = open;
+            */
 
             spawnN = transform.FindChild("spawnN").gameObject;
             spawnE = transform.FindChild("spawnE").gameObject;

@@ -266,15 +266,23 @@ public class GameManager : MonoBehaviour {
 			
 			if(n == -1){
 				ro.setDoorTexture("doorN", "none")
+			}else {
+				ro.setDoorTexture("doorN", "locke")
 			}
 			if(s == -1){
 				ro.setDoorTexture("doorS", "none")
+			}else {
+				ro.setDoorTexture("doorS", "locke")
 			}
 			if(w == -1){
 				ro.setDoorTexture("doorW", "none")
+			}else {
+				ro.setDoorTexture("doorW", "locke")
 			}
 			if(e == -1){
 				ro.setDoorTexture("doorE", "none")
+			}else {
+				ro.setDoorTexture("doorE", "locke")
 			}
 		}
     }
