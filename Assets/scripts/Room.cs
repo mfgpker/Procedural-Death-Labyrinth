@@ -8,6 +8,7 @@ public class Room : MonoBehaviour {
     private Vector3 size;
     private bool isBoosRoom = false;
     public GameObject[] monsters;
+     public GameObject[] bossmonsters;
     public GameObject[] spawnsm;
     public Texture open, locke, none;
     
@@ -71,6 +72,10 @@ public class Room : MonoBehaviour {
         else if (ran >= 13 && ran <= 16) {
             Debug.Log("FREE ROOM");
         }
+        
+        //boss
+        
+        
     }
 
     public void SetRoom(bool g) {
