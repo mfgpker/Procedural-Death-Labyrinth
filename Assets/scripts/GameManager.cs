@@ -71,7 +71,8 @@ public class GameManager : MonoBehaviour {
                 id++;
             }
         }
-        roomdoor();
+        
+        
 	}
 	
 	// Update is called once per frame
@@ -254,36 +255,66 @@ public class GameManager : MonoBehaviour {
         rto.teleport(dir, p);
     }
 
+
+    public Room getRoomByID(int id) {
+        for (int i = 0; i < allRooms.Length; i++) {
+            GameObject p = GameObject.Find("Room:" + i);
+
+            Room r = (Room)p.GetComponent(typeof(Room));
+            if (r.getID() == id) {
+
+                return r;
+            }
+
+        }
+
+        return null;
+
+    }
+
     public void roomdoor() {
-		for(GameObject rg in allRooms){
-			Room ro = (Room)rg.GetComponent<Room>();
-			int id = ro.getID();
-			int n,s,w,e;
-			n = MoveRoom(id, "north");
-			s = MoveRoom(id, "south");
-			w = MoveRoom(id, "west");
-			e = MoveRoom(id, "east");
-			
-			if(n == -1){
-				ro.setDoorTexture("doorN", "none")
-			}else {
-				ro.setDoorTexture("doorN", "locke")
-			}
-			if(s == -1){
-				ro.setDoorTexture("doorS", "none")
-			}else {
-				ro.setDoorTexture("doorS", "locke")
-			}
-			if(w == -1){
-				ro.setDoorTexture("doorW", "none")
-			}else {
-				ro.setDoorTexture("doorW", "locke")
-			}
-			if(e == -1){
-				ro.setDoorTexture("doorE", "none")
-			}else {
-				ro.setDoorTexture("doorE", "locke")
-			}
+       
+		foreach(GameObject rg in allRooms){
+			Room ro = (Room) rg.GetComponent<Room>();
+            if (!ro.notroom) {
+                int id = ro.getID();
+                int n, s, w, e;
+                n = MoveRoom(id, "north");
+                s = MoveRoom(id, "south");
+                w = MoveRoom(id, "west");
+                e = MoveRoom(id, "east");
+
+                Room rn = getRoomByID(n);
+                Room rs = getRoomByID(s);
+                Room rw = getRoomByID(w);
+                Room re = getRoomByID(e);
+
+                if (n == -1 || rn.notroom) {
+                    ro.setDoorTexture("doorN", "none");                    
+                }
+                else {
+                    ro.setDoorTexture("doorN", "open");  
+                }
+
+                if (s == -1 || rs.notroom) {
+                    ro.setDoorTexture("doorS", "none");      
+                }
+                else {
+                    ro.setDoorTexture("doorS", "open");
+                }
+                if (w == -1 || rw.notroom) {
+                    ro.setDoorTexture("doorW", "none");
+                }
+                else {
+                    ro.setDoorTexture("doorW", "open");
+                }
+                if (e == -1 || re.notroom) {
+                    ro.setDoorTexture("doorE", "none");
+                }
+                else {
+                    ro.setDoorTexture("doorE", "open");
+                }
+            }
 		}
     }
 

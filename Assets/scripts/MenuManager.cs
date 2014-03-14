@@ -12,7 +12,7 @@ public class MenuManager : MonoBehaviour {
     private string slectedResolutions;
     private bool iswindowed;
     private bool editing = false;
-    private string version = "0.1.6";
+    private string version = "0.1.7";
 	// Use this for initialization
 	void Start () {
 		instance = this;

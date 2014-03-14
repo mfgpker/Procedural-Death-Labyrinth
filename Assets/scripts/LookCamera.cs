@@ -15,6 +15,7 @@ public class LookCamera : MonoBehaviour {
         
         if (Input.GetKeyDown(KeyCode.G)) {
             isactive = !isactive;
+           
             gameObject.GetComponentInChildren<Camera>().enabled=isactive;
             //Debug.Log("pressed");
         }
