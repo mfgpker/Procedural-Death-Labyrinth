@@ -7,12 +7,12 @@ public class MenuManager : MonoBehaviour {
 	private string CurMenu = "";
 	public GUIStyle skin;
 	public GUISkin list;
-	private string[] items = new string[]{"720x480", "800x600","1280x800", "1280x1024","1920x1080"};
-    private Rect Box;
+	//private string[] items = new string[]{"720x480", "800x600","1280x800", "1280x1024","1920x1080"};
+    //private Rect Box;
     private string slectedResolutions;
     private bool iswindowed;
-    private bool editing = false;
-    private string version = "0.1.7";
+
+    private string version = "0.2.2";
 	// Use this for initialization
 	void Start () {
 		instance = this;
@@ -46,8 +46,6 @@ public class MenuManager : MonoBehaviour {
 		GUI.skin = list;
 		if(CurMenu == "Main")
 			Main();
-		if(CurMenu == "Play")
-			Play();
 		if(CurMenu == "Options")
 			Options();
 		if(CurMenu == "Credit")
@@ -61,8 +59,8 @@ public class MenuManager : MonoBehaviour {
 	private void Main(){
         //GUI.Label(new Rect(Screen.width - 190, Screen.height - 40, 250, 50), "version " + version);
 		if(GUI.Button(new Rect(Screen.width/2 - 125, Screen.height/2 - 120 - Offset, 250, 70), "Play", skin)){
-			//Application.loadedLevelName("level1");
-			ToMenu("Play");
+            FloorManager.init.show = true;
+            Application.LoadLevel("level1");
 		}
         if (GUI.Button(new Rect(Screen.width / 2 - 125, Screen.height / 2 - 0 - Offset, 250, 70), "Options", skin)) {
 			ToMenu("Options");
@@ -77,18 +75,9 @@ public class MenuManager : MonoBehaviour {
 
 	}
 
-	private void Play(){
-		Application.LoadLevel("level1");
-
-		if(GUI.Button(new Rect(Screen.width/2 - 80, Screen.height + 10 - Offset, 250, 70), "Back", skin)){
-			//Application.loadedLevelName("level1");
-			ToMenu("Main");
-		}
-	}
-
 	private void Options(){
 		
-		Box = new Rect(225, 110, 175, 50);
+		//Box = new Rect(225, 110, 175, 50);
 		/*
         GUI.Label(new Rect(50, 120, 180, 50), "Resolutions:");
 		if (GUI.Button(Box, slectedResolutions)){
@@ -142,6 +131,7 @@ public class MenuManager : MonoBehaviour {
                     break;
             }
         }
+        Screen.SetResolution(1280, 800, iswindowed);
 		PlayerPrefs.SetString("Resolution", slectedResolutions);
 	}
 

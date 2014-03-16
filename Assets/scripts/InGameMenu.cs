@@ -32,14 +32,19 @@ public class InGameMenu : MonoBehaviour {
             if(GUI.Button(new Rect(Screen.width / 2 - 125, 30, 250, 50), "Resume")) {
                 isMenu = false;
             }
-
+            if (GUI.Button(new Rect(Screen.width / 2 - 125, 90, 250, 50), "Restart")) {
+                FloorManager.init.reset();
+                Application.LoadLevel("level1");
+            }
             GUI.Label(new Rect(Screen.width / 2 - 140, Screen.height/2-70, 320, 250), "PAUSE");
 
             if (GUI.Button(new Rect(Screen.width / 2 - 125, Screen.height - 140, 250, 50), "Go to the Main Menu")) {
                 Application.LoadLevel(0);
+                DestroyObject(GameObject.FindGameObjectWithTag("floormanager"));
             }
             if(GUI.Button(new Rect(Screen.width / 2 - 125, Screen.height - 80, 250, 50), "Exit to desktop")){
                 Application.Quit();
+
             }
         }
     }

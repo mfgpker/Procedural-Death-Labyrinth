@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 92386045e7e002947a9b99f1fd55b348
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - bosskey: {fileID: 100012, guid: b27c69b4044c999459b7e782072d137e, type: 2}
+  - bult: {fileID: 100000, guid: 225bf7567981e3641ac51a851c3fcd2e, type: 2}
+  - target: {fileID: 400000, guid: a5183a19d0ecf08419230765a9d47883, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

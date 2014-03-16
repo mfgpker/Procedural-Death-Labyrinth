@@ -23,8 +23,6 @@ public class GameManager : MonoBehaviour {
         int id = 0;
         allRooms = new GameObject[numberOfRoomX * numberOfRoomY];
         bool bossroom = false;
-
-
         for (int i = 0; i < numberOfRoomX; i++) {
             for (int j = 0; j < numberOfRoomY; j++) {
                 Vector3 spawnPosition = transform.position;
@@ -32,6 +30,8 @@ public class GameManager : MonoBehaviour {
                 spawnPosition.y += j * (spawnAreaHeight / numberOfRoomY);
                 spawnPosition.z += 0;
                 int ran = Random.Range(0, 10);
+                
+
                // Debug.Log(ran);
                 if (ran < 5) {
                     if (!starter) {
@@ -44,9 +44,10 @@ public class GameManager : MonoBehaviour {
                         GameObject RoomObject = Instantiate(Rooms[0], spawnPosition, transform.rotation) as GameObject;
                         RoomObject.transform.parent = transform;
                         RoomObject.transform.name = "Room:" + id;
+
                     }
                 }
-                else if (ran >= 6 && ran < 9) {
+                else if (ran >= 6 && ran < 8) {
                     if (!bossroom) {
                         GameObject RoomObject = Instantiate(Rooms[1], spawnPosition, transform.rotation) as GameObject;
                         RoomObject.transform.parent = transform;
@@ -58,11 +59,13 @@ public class GameManager : MonoBehaviour {
                         GameObject RoomObject = Instantiate(Rooms[0], spawnPosition, transform.rotation) as GameObject;
                         RoomObject.transform.parent = transform;
                         RoomObject.transform.name = "Room:" + id;
+
                     }
                 } else {
                     GameObject RoomObject = Instantiate(Rooms[2], spawnPosition, transform.rotation) as GameObject;
                     RoomObject.transform.parent = transform;
                     RoomObject.transform.name = "Room:" + id;
+                    
                 }
                
                 GameObject r = GameObject.Find("Room:" + id);
@@ -73,11 +76,6 @@ public class GameManager : MonoBehaviour {
         }
         
         
-	}
-	
-	// Update is called once per frame
-	void Update () {
-       
 	}
 
     public int MoveRoom2(int id, string dir) {
@@ -105,7 +103,24 @@ public class GameManager : MonoBehaviour {
         }
         return toid;
     }
+    
+    bool playerdead = false; public GUISkin deadskin;
 
+    public void playerdie() {
+        audio.PlayOneShot(audio.clip);
+        FloorManager.init.reset();
+        playerdead = true;
+    }
+
+
+    void OnGUI() {
+        if (playerdead) {
+            Debug.Log("you died");
+            GUI.skin = deadskin;
+            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 250, 550, 500), "Game Over");
+
+        }
+    }
     public int MoveRoom(int id, string dir) {
         int toid = -1;
         if (dir == "north") { // +1
@@ -233,7 +248,7 @@ public class GameManager : MonoBehaviour {
         return toid;
     }
 
-    public void changeRoom(string dir){
+    public void teleport(string dir){
         int fromid = whatroom();
         int toid = MoveRoom(fromid, dir);
         if (toid == -1) {
@@ -250,11 +265,167 @@ public class GameManager : MonoBehaviour {
             Debug.Log("Cant move that way!");
             return;
         }
+
+
+        if (dir == "north" && rfrom.dn.islocked) {
+            Debug.Log("Door is lock!");
+            return;
+        }
+        else if (dir == "south" && rfrom.ds.islocked) {
+            Debug.Log("Door is lock!");
+            return;
+        }
+        else if (dir == "west" && rfrom.dw.islocked) {
+            Debug.Log("Door is lock!");
+            return;
+        }
+        else if (dir == "east" && rfrom.de.islocked) {
+            Debug.Log("Door is lock!");
+            return;
+        }
+
+        Player pl = p.GetComponent<Player>();
+        //
+        if (dir == "north" && rfrom.dn.needkey) {
+            if (pl.getKey() <= 0)
+                return;
+            else {
+                pl.useKey();
+                rfrom.dn.needkey = false;
+                rfrom.setDoorTexture("doorN", "open");
+            }
+        }
+        else if (dir == "south" && rfrom.ds.needkey) {
+            if (pl.getKey() <= 0)
+                return;
+            else {
+                pl.useKey();
+                rfrom.ds.needkey = false;
+                rfrom.setDoorTexture("doorS", "open");
+            }
+        }
+        else if (dir == "west" && rfrom.dw.needkey) {
+            if (pl.getKey() <= 0)
+                return;
+            else {
+                pl.useKey();
+                rfrom.dw.needkey = false;
+                rfrom.setDoorTexture("doorW", "open");
+            }
+        }
+        else if (dir == "east" && rfrom.de.needkey) {
+            if (pl.getKey() <= 0)
+                return;
+            else {
+                pl.useKey();
+                rfrom.de.needkey = false;
+                rfrom.setDoorTexture("doorE","open");
+            }
+        }
+
+        if (dir == "north" && rfrom.dn.bosskey) {
+            if (pl.getbossKey() <= 0)
+                return;
+            else pl.usebossKey();
+        }
+        else if (dir == "south" && rfrom.ds.bosskey) {
+            if (pl.getbossKey() <= 0)
+                return;
+            else pl.usebossKey();
+        }
+        else if (dir == "west" && rfrom.dw.bosskey) {
+            if (pl.getbossKey() <= 0)
+                return;
+            else pl.usebossKey();
+        }
+        else if (dir == "east" && rfrom.de.bosskey) {
+            if (pl.getbossKey() <= 0)
+                return;
+            else pl.usebossKey();
+        } 
+
         rfrom.SetRoom(false);
         rfrom.disablecam();
         rto.teleport(dir, p);
     }
 
+
+    public string[] getRoomsAroundyou() {
+        string[] rms = new string[4];
+        int fromid = whatroom();
+        int toidN = MoveRoom(fromid, "north");
+        int toidS = MoveRoom(fromid, "south");
+        int toidW = MoveRoom(fromid, "west");
+        int toidE = MoveRoom(fromid, "east");
+
+        if (toidN == -1) {
+            rms[0] = "none";
+        }
+        else {
+            GameObject toN = GameObject.Find("Room:" + toidN);
+            Room rtoN = (Room)toN.GetComponent(typeof(Room));
+            if (rtoN.notroom) {
+                rms[0] = "none";
+            }
+            else if (rtoN.getBossRoom()) {
+                rms[0] = "none";
+            } else
+            rms[0] = "doorN";
+
+        }
+        if (toidS == -1) {
+            rms[1] = "none";
+        }
+        else {
+            GameObject toS = GameObject.Find("Room:" + toidS);
+            Room rtoS = (Room)toS.GetComponent(typeof(Room));
+            if (rtoS.notroom) {
+                rms[1] = "none";
+            }
+            else if (rtoS.getBossRoom()) {
+                rms[1] = "none";
+            }
+            else
+                rms[1] = "doorS";
+
+        }
+        if (toidW == -1) {
+            rms[2] = "none";
+        }
+        else {
+            GameObject toW = GameObject.Find("Room:" + toidW);
+            Room rtoW = (Room)toW.GetComponent(typeof(Room));
+            if (rtoW.notroom) {
+                rms[2] = "none";
+            }
+            else if (rtoW.getBossRoom()) {
+                rms[2] = "none";
+            }
+            else
+                rms[2] = "doorW";
+  
+        }
+        if (toidE == -1) {
+            rms[3] = "none";
+
+        }
+        else {
+            GameObject toE = GameObject.Find("Room:" + toidE);
+            Room rtoE = (Room)toE.GetComponent(typeof(Room));
+            if (rtoE.notroom) {
+                rms[3] = "none";
+            }
+            else if (rtoE.getBossRoom()) {
+                rms[3] = "none";
+            }
+            else
+                rms[3] = "doorE";
+           
+        }
+        
+
+        return rms;
+    }
 
     public Room getRoomByID(int id) {
         for (int i = 0; i < allRooms.Length; i++) {
@@ -272,10 +443,38 @@ public class GameManager : MonoBehaviour {
 
     }
 
+    public Room getRoomByCurrently() {
+        foreach (GameObject rg in allRooms) {
+            Room r = (Room)rg.GetComponent(typeof(Room));
+            if (r.currentRoom) {
+                return r;
+            }
+
+        }
+
+        return null;
+
+    }
+
+    public Room getRoomByBoss() {
+        foreach (GameObject rg in allRooms) {
+            Room r = (Room)rg.GetComponent(typeof(Room));
+            if (r.getBossRoom()) {
+                return r;
+            }
+
+        }
+
+        return null;
+
+    }
+
     public void roomdoor() {
-       
-		foreach(GameObject rg in allRooms){
-			Room ro = (Room) rg.GetComponent<Room>();
+
+        foreach (GameObject rg in allRooms) {
+            Room ro = (Room)rg.GetComponent<Room>();
+            int keyfactor = Random.Range(0, 10);
+            bool fa = true;
             if (!ro.notroom) {
                 int id = ro.getID();
                 int n, s, w, e;
@@ -290,32 +489,85 @@ public class GameManager : MonoBehaviour {
                 Room re = getRoomByID(e);
 
                 if (n == -1 || rn.notroom) {
-                    ro.setDoorTexture("doorN", "none");                    
+                    ro.setDoorTexture("doorN", "none");
+                }
+                else if (rn.getBossRoom()) {
+                    ro.setDoorTexture("doorN", "boss");
                 }
                 else {
-                    ro.setDoorTexture("doorN", "open");  
+                    if (keyfactor <= 3 && fa) {
+                       ro.setDoorTexture("doorN", "keyneed");
+                       fa = false;
+                   } else {
+                    if (ro.numbermobs <= 0) 
+                        ro.setDoorTexture("doorN", "open");
+                    else 
+                        ro.setDoorTexture("doorN", "lock");
+                    }
                 }
 
                 if (s == -1 || rs.notroom) {
-                    ro.setDoorTexture("doorS", "none");      
+                    ro.setDoorTexture("doorS", "none");
+                }
+                else if (rs.getBossRoom()) {
+                    ro.setDoorTexture("doorS", "boss");
                 }
                 else {
-                    ro.setDoorTexture("doorS", "open");
+                    if (keyfactor <= 3 && fa) {
+                        ro.setDoorTexture("doorS", "keyneed");
+                        fa = false;
+                    }
+                    else {
+                        if (ro.numbermobs <= 0)
+                            ro.setDoorTexture("doorS", "open");
+                        else
+                            ro.setDoorTexture("doorS", "lock");
+                    }
                 }
+
                 if (w == -1 || rw.notroom) {
                     ro.setDoorTexture("doorW", "none");
                 }
-                else {
-                    ro.setDoorTexture("doorW", "open");
+                else if (rw.getBossRoom()) {
+                    ro.setDoorTexture("doorW", "boss");
                 }
+                else {
+                    if (keyfactor <= 3 && fa) {
+                        ro.setDoorTexture("doorW", "keyneed");
+                        fa = false;
+                    }
+                    else {
+                        if (ro.numbermobs <= 0)
+                            ro.setDoorTexture("doorW", "open");
+                        else
+                            ro.setDoorTexture("doorW", "lock");
+                    }
+                }
+
                 if (e == -1 || re.notroom) {
                     ro.setDoorTexture("doorE", "none");
                 }
-                else {
-                    ro.setDoorTexture("doorE", "open");
+                else if (re.getBossRoom()) {
+                    ro.setDoorTexture("doorE", "boss");
                 }
+                else {
+                    if (keyfactor <= 3 && fa) {
+                        ro.setDoorTexture("doorE", "keyneed");
+                        fa = false;
+                    }
+                    else {
+                        if (ro.numbermobs <= 0)
+                            ro.setDoorTexture("doorE", "open");
+                        else
+                            ro.setDoorTexture("doorE", "lock");
+                    }
+                }
+                if (ro.starterroom) {
+                    ro.unlockdoor();
+                }
+                if (ro.getBossRoom()) ro.unlockdoor(); // kom i øjeblikket
             }
-		}
+        }
     }
 
     public int whatroom(){
